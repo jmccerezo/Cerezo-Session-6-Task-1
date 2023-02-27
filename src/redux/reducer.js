@@ -26,7 +26,10 @@ const reducer = (state = initState, action) => {
     case actions.UCB:
       return { ...state, empData: action.payload };
     case actions.UFB:
-      return { ...state, empData: action.payload };
+      let empCopy = [...state.empData];
+      empCopy[1].name = action.payload[0];
+      empCopy[1].designation = action.payload[1];
+      return { ...state, empData: empCopy };
 
     default:
       return state;

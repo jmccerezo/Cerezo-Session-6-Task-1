@@ -5,6 +5,6 @@ export const updateClassBased = (val) => {
   return { type: UCB, payload: val };
 };
 
-export const updateFuncBased = (val) => {
-  return { type: UFB, payload: val };
+export const updateFuncBased = (name, designation) => {
+  return { type: UFB, payload: [name, designation] };
 };
